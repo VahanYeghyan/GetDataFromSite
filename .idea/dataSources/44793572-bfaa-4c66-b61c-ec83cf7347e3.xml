@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - OAuth2Test@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="OAuth2Test">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="ConnectJSP"/>
+    <schema id="3" name="Hiber"/>
+    <schema id="4" name="hibernate"/>
+    <schema id="5" name="information_schema"/>
+    <schema id="6" name="jpatest"/>
+    <schema id="7" name="LoginRegisterTestDb"/>
+    <schema id="8" name="mysql"/>
+    <schema id="9" name="performance_schema"/>
+    <schema id="10" name="projectmanagement"/>
+    <schema id="11" name="restclienttest"/>
+    <schema id="12" name="Table3"/>
+    <schema id="13" name="test oauth2"/>
+    <schema id="14" name="testDatabase"/>
+    <schema id="15" name="testwebsfl"/>
+    <schema id="16" name="twitter"/>
+    <table id="17" parent="1" name="authority"/>
+    <table id="18" parent="1" name="bank"/>
+    <table id="19" parent="1" name="bank_currency"/>
+    <table id="20" parent="1" name="currency"/>
+    <table id="21" parent="1" name="oauth_access_token"/>
+    <table id="22" parent="1" name="oauth_refresh_token"/>
+    <table id="23" parent="1" name="rate"/>
+    <table id="24" parent="1" name="rate_currency"/>
+    <table id="25" parent="1" name="user"/>
+    <table id="26" parent="1" name="user_authority"/>
+    <table id="27" parent="1" name="users"/>
+    <column id="28" parent="17" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <key id="29" parent="17" name="PRIMARY">
+      <columns>name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="30" parent="18" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="31" parent="18" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="32" parent="18" name="removed">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="33" parent="18" name="updated">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="34" parent="18" name="uuid">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="35" parent="18" name="bank_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="36" parent="18" name="UK_k7b1fp39xemdvdtco9j7uk62y">
+      <columns>bank_name</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="37" parent="18" name="UK_q0ahw55c3ycfi04456isnleve">
+      <columns>uuid</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="38" parent="18" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="39" parent="18" name="UK_q0ahw55c3ycfi04456isnleve">
+      <columns>uuid</columns>
+      <underlying-index>UK_q0ahw55c3ycfi04456isnleve</underlying-index>
+    </key>
+    <key id="40" parent="18" name="UK_k7b1fp39xemdvdtco9j7uk62y">
+      <columns>bank_name</columns>
+      <underlying-index>UK_k7b1fp39xemdvdtco9j7uk62y</underlying-index>
+    </key>
+    <column id="41" parent="19" name="bank_id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="42" parent="19" name="currency_id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <index id="43" parent="19" name="FKgoup2n37ywg5rwa0kou9531xm">
+      <columns>currency_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="44" parent="19" name="PRIMARY">
+      <columns>bank_id
+currency_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="45" parent="19" name="FKgsmqct9fnkh1j0bqtn7ve8law">
+      <columns>bank_id</columns>
+      <ref-key>~.bank.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="46" parent="19" name="FKgoup2n37ywg5rwa0kou9531xm">
+      <columns>currency_id</columns>
+      <ref-key>~.currency.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="47" parent="20" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="48" parent="20" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="49" parent="20" name="removed">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="50" parent="20" name="updated">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="51" parent="20" name="uuid">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="52" parent="20" name="currency_name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="53" parent="20" name="UK_8joybdu0hdbcrigyk408trimp">
+      <columns>uuid</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="54" parent="20" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="55" parent="20" name="UK_8joybdu0hdbcrigyk408trimp">
+      <columns>uuid</columns>
+      <underlying-index>UK_8joybdu0hdbcrigyk408trimp</underlying-index>
+    </key>
+    <column id="56" parent="21" name="authentication_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="57" parent="21" name="authentication">
+      <data-type>tinyblob|0</data-type>
+    </column>
+    <column id="58" parent="21" name="client_id">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="59" parent="21" name="refresh_token">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="60" parent="21" name="token">
+      <data-type>tinyblob|0</data-type>
+    </column>
+    <column id="61" parent="21" name="token_id">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="62" parent="21" name="user_name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="63" parent="21" name="PRIMARY">
+      <columns>authentication_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="64" parent="22" name="token_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="65" parent="22" name="authentication">
+      <data-type>tinyblob|0</data-type>
+    </column>
+    <column id="66" parent="22" name="token">
+      <data-type>tinyblob|0</data-type>
+    </column>
+    <key id="67" parent="22" name="PRIMARY">
+      <columns>token_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="68" parent="23" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="69" parent="23" name="created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="70" parent="23" name="removed">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="71" parent="23" name="updated">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="72" parent="23" name="uuid">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="73" parent="23" name="buy">
+      <data-type>decimal(19,2)|0</data-type>
+    </column>
+    <column id="74" parent="23" name="sell">
+      <data-type>decimal(19,2)|0</data-type>
+    </column>
+    <column id="75" parent="23" name="bank_name">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <index id="76" parent="23" name="FKm6ysy9reqe8ooa1gx8839f5xe">
+      <columns>bank_name</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="77" parent="23" name="UK_gyo51cs1b6mjuvywqqv126ksh">
+      <columns>uuid</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="78" parent="23" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="79" parent="23" name="UK_gyo51cs1b6mjuvywqqv126ksh">
+      <columns>uuid</columns>
+      <underlying-index>UK_gyo51cs1b6mjuvywqqv126ksh</underlying-index>
+    </key>
+    <foreign-key id="80" parent="23" name="FKm6ysy9reqe8ooa1gx8839f5xe">
+      <columns>bank_name</columns>
+      <ref-key>~.bank.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="81" parent="24" name="rate_id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="82" parent="24" name="currency_id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <index id="83" parent="24" name="FKq5mxx3qfi8x11lbjxutvun6eb">
+      <columns>currency_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="84" parent="24" name="PRIMARY">
+      <columns>rate_id
+currency_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="85" parent="24" name="FKtg32chrku9g5mtx8aeviawhum">
+      <columns>rate_id</columns>
+      <ref-key>~.rate.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="86" parent="24" name="FKq5mxx3qfi8x11lbjxutvun6eb">
+      <columns>currency_id</columns>
+      <ref-key>~.currency.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="87" parent="25" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="88" parent="25" name="activated">
+      <mandatory>1</mandatory>
+      <data-type>bit(1)|0</data-type>
+    </column>
+    <column id="89" parent="25" name="activationkey">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="90" parent="25" name="email">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="91" parent="25" name="password">
+      <data-type>varchar(500)|0</data-type>
+    </column>
+    <column id="92" parent="25" name="resetpasswordkey">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <key id="93" parent="25" name="PRIMARY">
+      <columns>username</columns>
+      <primary>1</primary>
+    </key>
+    <column id="94" parent="26" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="95" parent="26" name="authority">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="96" parent="26" name="FK3odsunh03vw9546adkrvdfp79">
+      <columns>authority</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="97" parent="26" name="PRIMARY">
+      <columns>username
+authority</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="98" parent="26" name="FKeh9b2lkkmmj4rvnv2q1y2furc">
+      <columns>username</columns>
+      <ref-key>~.user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="99" parent="26" name="FK3odsunh03vw9546adkrvdfp79">
+      <columns>authority</columns>
+      <ref-key>~.authority.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="100" parent="27" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="101" parent="27" name="activated">
+      <mandatory>1</mandatory>
+      <data-type>bit(1)|0</data-type>
+    </column>
+    <column id="102" parent="27" name="activationkey">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="103" parent="27" name="email">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="104" parent="27" name="password">
+      <data-type>varchar(500)|0</data-type>
+    </column>
+    <column id="105" parent="27" name="resetpasswordkey">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <key id="106" parent="27" name="PRIMARY">
+      <columns>username</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

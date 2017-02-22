@@ -1,0 +1,42 @@
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button wicket:id="createCurrencies">create currencies</button>
+<br>
+<form wicket:id="bankNameForm">
+    create bank<input wicket:id="bankName" type="text">
+    <input type="submit" wicket:id="submit">
+
+</form>
+
+<br><br>
+<form wicket:id="availableCurrencies">
+    select bank <select wicket:id="bankDropDownChoice"></select>
+    <br>
+
+    <span wicket:id="group">
+        <input type="checkbox" wicket:id="groupselector">check/uncheck all
+
+        <table cellspacing="0" cellpadding="2" border="1">
+                    <tr>
+                        <td><b>Select</b></td>
+                        <td><b>currencies</b></td>
+                    </tr>
+                    <tr wicket:id="currencies">
+                        <td><input type="checkbox" wicket:id="checkbox"/></td>
+                        <td><span wicket:id="name"></span></td>
+                    </tr>
+                  </table>
+    </span>
+
+    <input type="submit" wicket:id="availableCurrenciesSubmit" value="submit">
+</form>
+
+<br><br>
+<button wicket:id="xxx">sout currencies</button>
+
+</body>
+</html>

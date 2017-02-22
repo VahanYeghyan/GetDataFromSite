@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - @localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="ConnectJSP">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="Hiber"/>
+    <schema id="3" name="hibernate"/>
+    <schema id="4" name="information_schema"/>
+    <schema id="5" name="jpatest"/>
+    <schema id="6" name="LoginRegisterTestDb"/>
+    <schema id="7" name="mysql"/>
+    <schema id="8" name="performance_schema"/>
+    <schema id="9" name="projectmanagement"/>
+    <schema id="10" name="restclienttest"/>
+    <schema id="11" name="Table3"/>
+    <schema id="12" name="test oauth2"/>
+    <schema id="13" name="testDatabase"/>
+    <schema id="14" name="testwebsfl"/>
+    <schema id="15" name="twitter"/>
+    <schema id="16" name="OAuth2Test"/>
+    <table id="17" parent="1" name="Employees"/>
+    <column id="18" parent="17" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="19" parent="17" name="age">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="20" parent="17" name="first">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="21" parent="17" name="last">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="22" parent="17" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

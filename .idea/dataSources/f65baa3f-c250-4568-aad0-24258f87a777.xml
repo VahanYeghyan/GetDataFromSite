@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="postgres">
+      <object-id>12441</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="2" name="tiko">
+      <object-id>16393</object-id>
+    </database>
+    <database id="3" name="OAuth2Test">
+      <object-id>29844</object-id>
+    </database>
+    <schema id="4" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>2886</introspection-state-number>
+      <introspection-timestamp>2017-02-02.20:01:41.063</introspection-timestamp>
+    </schema>
+    <schema id="5" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="6" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="7" parent="1" name="pg_temp_1">
+      <object-id>11848</object-id>
+    </schema>
+    <schema id="8" parent="1" name="pg_toast_temp_1">
+      <object-id>11849</object-id>
+    </schema>
+    <schema id="9" parent="1" name="information_schema">
+      <object-id>12153</object-id>
+    </schema>
+    <sequence id="10" parent="4" name="access_token_seq">
+      <object-id>24661</object-id>
+      <state-number>758</state-number>
+      <increment-by>50</increment-by>
+    </sequence>
+    <sequence id="11" parent="4" name="device_seq">
+      <object-id>24663</object-id>
+      <state-number>759</state-number>
+      <increment-by>50</increment-by>
+    </sequence>
+    <sequence id="12" parent="4" name="refresh_token_seq">
+      <object-id>24665</object-id>
+      <state-number>760</state-number>
+      <increment-by>50</increment-by>
+    </sequence>
+    <sequence id="13" parent="4" name="user_seq">
+      <object-id>24667</object-id>
+      <state-number>761</state-number>
+      <increment-by>50</increment-by>
+    </sequence>
+    <sequence id="14" parent="4" name="wall_seq">
+      <object-id>24669</object-id>
+      <state-number>762</state-number>
+      <increment-by>50</increment-by>
+    </sequence>
+    <table id="15" parent="4" name="weather">
+      <object-id>28661</object-id>
+      <state-number>2886</state-number>
+    </table>
+    <column id="16" parent="15" name="city">
+      <state-number>2886</state-number>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <column id="17" parent="15" name="temp_lo">
+      <state-number>2886</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="18" parent="15" name="temp_hi">
+      <state-number>2886</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="19" parent="15" name="prcp">
+      <state-number>2886</state-number>
+      <data-type>real|0</data-type>
+    </column>
+    <column id="20" parent="15" name="date">
+      <state-number>2886</state-number>
+      <data-type>date|0</data-type>
+    </column>
+  </database-model>
+</dataSource>
