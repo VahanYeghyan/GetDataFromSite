@@ -5,17 +5,15 @@ package com.vahan.oauth;
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.approval.ApprovalStore;
 import org.springframework.security.oauth2.provider.approval.TokenApprovalStore;
@@ -42,7 +40,7 @@ public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new StandardPasswordEncoder();
+        return new BCryptPasswordEncoder();
     }
 
     @Autowired
@@ -51,8 +49,9 @@ public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 /*.inMemoryAuthentication()
                 .withUser("bill").password("abc123").roles("ADMIN").and()
                 .withUser("bob").password("abc123").roles("USER");*/
-                .userDetailsService(userDetailsService);
-        // .passwordEncoder(passwordEncoder());
+
+                .userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder());
     }
 
 

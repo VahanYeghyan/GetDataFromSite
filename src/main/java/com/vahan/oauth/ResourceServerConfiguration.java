@@ -33,9 +33,10 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .antMatchers("/hi/**")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/hi/**")
+                .antMatchers("/hi/secured")
                 .access("hasRole('ADMIN')")
                 .and()
+
                 .exceptionHandling()
                 .accessDeniedHandler(new OAuth2AccessDeniedHandler());
     }

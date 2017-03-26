@@ -43,9 +43,9 @@ public class UserDetailsServices implements UserDetailsService {
         Users userFromDatabase = userRepository.findByUsername(lowercaseLogin);
 
         if (userFromDatabase == null) {
-            throw new UsernameNotFoundException("User " + lowercaseLogin + " was not found in the database");
+            throw new UsernameNotFoundException("UserPageModel " + lowercaseLogin + " was not found in the database");
         } else if (!userFromDatabase.isActivated()) {
-            throw new UserNotActivatedException("User " + lowercaseLogin + " is not activated");
+            throw new UserNotActivatedException("UserPageModel " + lowercaseLogin + " is not activated");
         }
 
 
